@@ -35,9 +35,10 @@
 }
 
 .mega-menu__list {
+  flex: 1;
   display: grid;
   gap: 1.8rem 4rem;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   list-style: none;
 }
 
@@ -84,4 +85,25 @@
 
 .mega-menu__list--condensed .mega-menu__link {
   font-weight: normal;
+}
+
+/* --- Custom Mega Menu Layout with Images --- */
+
+.mega-menu__flex {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.mega-menu__image {
+  max-width: 300px;
+  flex-shrink: 0;
+}
+
+.mega-menu__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
 }

@@ -49,6 +49,33 @@
                             </span>
                             {{ link.title | escape }}
                           </button>
+                          {%- comment -%}
+                            Renders a mobile drawer image for the Woman and Man menu items.
+                            This matches the design used in the desktop mega menu.
+                          {%- endcomment -%}
+                          {%- if link.handle == 'woman' and section.settings.mega_menu_image_woman -%}
+                            <div class="menu-drawer__menu-image">
+                              <img
+                                src="{{ section.settings.mega_menu_image_woman | image_url: width: 800 }}"
+                                alt="Woman menu image"
+                                width="{{ section.settings.mega_menu_image_woman.width }}"
+                                height="{{ section.settings.mega_menu_image_woman.height }}"
+                                loading="lazy"
+                              >
+                            </div>
+                          {%- endif -%}
+
+                          {%- if link.handle == 'man' and section.settings.mega_menu_image_man -%}
+                            <div class="menu-drawer__menu-image">
+                              <img
+                                src="{{ section.settings.mega_menu_image_man | image_url: width: 800 }}"
+                                alt="Man menu image"
+                                width="{{ section.settings.mega_menu_image_man.width }}"
+                                height="{{ section.settings.mega_menu_image_man.height }}"
+                                loading="lazy"
+                              >
+                            </div>
+                          {%- endif -%}
                           <ul class="menu-drawer__menu list-menu" role="list" tabindex="-1">
                             {%- for childlink in link.links -%}
                               <li>
