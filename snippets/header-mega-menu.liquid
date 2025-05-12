@@ -31,30 +31,6 @@
                 tabindex="-1"
               >
                 <div class="mega-menu__flex page-width">
-                  {%- assign img_woman = section.settings.mega_menu_image_woman -%}
-                  {%- if link.handle == 'woman' and img_woman != blank -%}
-                    <div class="mega-menu__image">
-                      <img
-                        src="{{ img_woman | image_url: width: 400 }}"
-                        width="{{ img_woman.width }}"
-                        height="{{ img_woman.height }}"
-                        alt="Woman menu image"
-                      >
-                    </div>
-                  {%- endif -%}
-
-                  {%- assign img_man = section.settings.mega_menu_image_man -%}
-                  {%- if link.handle == 'man' and img_man != blank -%}
-                    <div class="mega-menu__image">
-                      <img
-                        src="{{ img_man | image_url: width: 400 }}"
-                        width="{{ img_man.width }}"
-                        height="{{ img_man.height }}"
-                        alt="Man menu image"
-                      >
-                    </div>
-                  {%- endif -%}
-
                   <ul
                     class="mega-menu__list{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
                     role="list"
@@ -92,6 +68,29 @@
                       </li>
                     {%- endfor -%}
                   </ul>
+                  {%- assign img_woman = section.settings.mega_menu_image_woman -%}
+                  {%- if link.handle == 'woman' and img_woman != blank -%}
+                    <div class="mega-menu__image">
+                      <img
+                        src="{{ img_woman | image_url: width: 400 }}"
+                        width="{{ img_woman.width }}"
+                        height="{{ img_woman.height }}"
+                        alt="Woman menu image"
+                      >
+                    </div>
+                  {%- endif -%}
+
+                  {%- assign img_man = section.settings.mega_menu_image_man -%}
+                  {%- if link.handle == 'man' and img_man != blank -%}
+                    <div class="mega-menu__image">
+                      <img
+                        src="{{ img_man | image_url: width: 400 }}"
+                        width="{{ img_man.width }}"
+                        height="{{ img_man.height }}"
+                        alt="Man menu image"
+                      >
+                    </div>
+                  {%- endif -%}
                 </div>
               </div>
             </details>
