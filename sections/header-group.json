@@ -43,7 +43,7 @@
         "menu": "main-menu",
         "menu_type_desktop": "mega",
         "sticky_header_type": "always",
-        "show_line_separator": true,
+        "show_line_separator": false,
         "mega_menu_image_woman": "shopify://shop_images/AABD181003_717_01.webp",
         "mega_menu_image_man": "shopify://shop_images/AMAU182008_115_01.webp",
         "color_scheme": "scheme-1",

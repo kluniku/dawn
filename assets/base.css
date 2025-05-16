@@ -2351,6 +2351,7 @@ input[type='checkbox'] {
 }
 
 .header {
+  position: relative;
   display: grid;
   grid-template-areas: 'left-icons heading icons';
   grid-template-columns: 1fr 2fr 1fr;

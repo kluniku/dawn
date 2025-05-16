@@ -220,3 +220,58 @@ cart-items {
     gap: 1rem;
   }
 }
+
+/* -----------------------------------------------------------------------------
+  Promo Code Field Styles (for cart)
+  - Styles input + button inline
+  - Based on Dawn's field__input + button system
+----------------------------------------------------------------------------- */
+
+.cart__promo {
+  margin-top: 2rem;
+}
+
+.cart__promo label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.cart__promo input.field__input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.cart__promo button {
+  color: rgb(var(--color-button-text)); /* White text */
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cart__promo button:hover {
+  background-color: var(--color-button-hover, #333);
+}
+
+.cart__promo button:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.gift-promo-message {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  background-color: #f3fdf6;
+  border: 1px solid #b7eac7;
+  color: #137c4c;
+  border-radius: 4px;
+  font-size: 0.95rem;
+}

@@ -447,6 +447,40 @@
       >
         {{ 'accessibility.loading' | t }}
       </p>
+      <!-- Added by KLU - Hidden promo code input for gift logic -->
+      <div class="cart__field cart__promo">
+        <label for="promo_code_input">Promo Code</label>
+        <div style="display: flex; gap: 8px; max-width: 400px;">
+          <input
+            type="text"
+            name="attributes[promo_code]"
+            id="promo_code_input"
+            value="{{ cart.attributes.promo_code | escape }}"
+            placeholder="Enter promo code"
+            class="field__input"
+          >
+          <button type="submit" class="button button--primary">Apply</button>
+        </div>
+
+        {% assign subtotal = cart.total_price | divided_by: 100 %}
+        {% assign promo_code = cart.attributes.promo_code %}
+        {% assign promo_threshold = 0 %}
+
+        {% if promo_code == 'PLAZH25' %}
+          {% assign promo_threshold = 3500 %}
+        {% endif %}
+
+        {% if promo_code and subtotal >= promo_threshold %}
+          <p class="gift-promo-message">
+            🎁 Promo <strong>{{ promo_code }}</strong> applied! Your free gift will be added automatically.
+          </p>
+        {% elsif promo_code %}
+          <p class="gift-promo-warning" style="color: #b00020;">
+            ⚠️ Promo <strong>{{ promo_code }}</strong> detected, but your cart total must reach
+            <strong>{{ promo_threshold | money }}</strong> to unlock your gift.
+          </p>
+        {% endif %}
+      </div>
     </form>
   </div>
 </cart-items>
